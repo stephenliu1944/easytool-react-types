@@ -55,7 +55,7 @@ export function isReactClass(node) {
     _source: null 
 */
 export function isReactFragment(node) {
-    return node && typeof node.type === Symbol.for('react.fragment');
+    return node && node.type === Symbol.for('react.fragment');
 }
 
 /* 
