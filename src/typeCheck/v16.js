@@ -1,7 +1,29 @@
+/* 
+    $$typeof: Symbol(react.element)
+    key: "1"
+    props: {onClick: ƒ, children: Array(2)}
+    ref: null
+    type: "div"
+    _owner: FiberNode {tag: 1, key: null, elementType: ƒ, type: ƒ, stateNode: _class, …}
+    _store: {validated: false}
+    _self: null
+    _source: null
+*/
 export function isReactDOMElement(node) {
     return node && typeof node.type === 'string';
 }
 
+/* 
+    $$typeof: Symbol(react.element)
+    key: "1"
+    props: {name: "stephen", children: Array(3)}
+    ref: null
+    type: ƒ MyComponent(props)
+    _owner: FiberNode {tag: 1, key: null, elementType: ƒ, type: ƒ, stateNode: _class, …}
+    _store: {validated: false}
+    _self: null
+    _source: null
+*/
 export function isReactComponentElement(node) {
     return node && typeof node.type === 'function';
 }
