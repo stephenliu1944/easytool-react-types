@@ -1,63 +1,86 @@
-# react-node-type
-Use for check react node type.
+# @easytool/react-types
+This package use to check React element type.
 
 ## Install
-npm i react-node-type
+npm install @easytool/react-types
 
 ## Usage
 ```js
 import {
-    isReactDOMElement,
-    isReactComponentElement,
-    isReactClass,
-    isReactFragment,
-    isReactPortal,
-    isReactText,
-    isReactEmpty
-} from 'react-node-type';
+    isDOMElement,
+    isComponentElement,
+    isClass,
+    isFragment,
+    isPortal,
+    isText,
+    isEmpty
+} from '@easytool/react-types';
 
-isReactDOMElement(<p>Hellow World</p>);     // true
+isDOMElement(<p>Hellow World</p>);     // true
 
 function MyComponent() {
     return (
         <p>Hellow World</p>
     );
 }
-isReactComponentElement(MyComponent);       // true
+isComponentElement(MyComponent);       // true
 
 class MyClass extends Component {
     ...
 }
-isReactClass(MyClass);                     // true
+isClass(MyClass);                     // true
 
-
-isReactFragment(<></>);                    // true
-isReactFragment(<React.Fragment></React.Fragment>); // true
+isFragment(<></>);                    // true
+isFragment(<React.Fragment></React.Fragment>); // true
 
 var portal = ReactDOM.createPortal(
     [...],
     document.getElementById('app');
 );
-isReactPortal(portal);                          // true
+isPortal(portal);                          // true
 
-isReactText(string | number);                   // true
+isText(string | number);                   // true
 
-isReactEmpty(null | undefined | true | false)   // true
+isEmpty(null | undefined | true | false)   // true
 ```
 
 ## API
 ```js
-export function isReactDOMElement(node);
+export function isDOMElement(object);
 
-export function isReactComponentElement(node);
+export function isComponentElement(object);
 
-export function isReactClass(node);
+export function isClass(object);
 
-export function isReactFragment(node);
+export function isText(object);
 
-export function isReactPortal(node);
+export function isEmpty(object);
+/**
+ * extends react-is lib below
+ */
+export function isFragment(object);
 
-export function isReactText(node);
+export function isPortal(object);
 
-export function isReactEmpty(node);
+export function isElement(object);
+
+export function isConcurrentMode(object);
+
+export function isContextConsumer(object);
+
+export function isContextProvider(object);
+
+export function isForwardRef(object);
+
+export function isLazy(object);
+
+export function isMemo(object);
+
+export function isPortal(object);
+
+export function isProfiler(object);
+
+export function isStrictMode(object);
+
+export function isSuspense(object);
 ```

@@ -1,20 +1,20 @@
 {
-  "name": "react-node-type",
-  "version": "0.1.3",
-  "description": "Use for check react node type.",
+  "name": "@easytool/react-types",
+  "version": "0.1.2",
+  "description": "This package use to check React element type.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
-  "libraryName": "ReactNodeType",
+  "libraryName": "ReactTypes",
   "license": "MIT",
   "author": "Stephen Liu",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stephenliu1944/react-node-type"
+    "url": "https://github.com/stephenliu1944/easytool-react-types"
   },
-  "homepage": "https://github.com/stephenliu1944/react-node-type",
+  "homepage": "https://github.com/stephenliu1944/easytool-react-types",
   "bugs": {
-    "url": "https://github.com/stephenliu1944/react-node-type/issues"
+    "url": "https://github.com/stephenliu1944/easytool-react-types/issues"
   },
   "keywords": [
     "react",
@@ -37,10 +37,10 @@
     "test": "jest",
     "package": "cross-env BUILD_PATH=dist npm run build:prod",
     "package:watch": "cross-env BUILD_PATH=dist NODE_ENV=production rollup -w -c rollup.config.prod.js",
-    "publish:prerelease": "npm run package && gulp version-prerelease && npm publish",
-    "publish:patch": "npm run package && gulp version-patch && npm publish",
-    "publish:minor": "npm run package && gulp version-minor && npm publish",
-    "publish:major": "npm run package && gulp version-major && npm publish",
+    "publish:prerelease": "npm run package && gulp version-prerelease && npm publish --access=public",
+    "publish:patch": "npm run package && gulp version-patch && npm publish --access=public",
+    "publish:minor": "npm run package && gulp version-minor && npm publish --access=public",
+    "publish:major": "npm run package && gulp version-major && npm publish --access=public",
     "unpublish": "npm unpublish -f",
     "git:push": "gulp git-push"
   },
@@ -88,6 +88,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
+    "react-is": "^16.11.0",
     "rollup": "^1.1.2",
     "rollup-plugin-alias": "^1.4.0",
     "rollup-plugin-babel": "^4.0.3",
@@ -100,6 +101,9 @@
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-serve": "^0.6.0",
     "rollup-plugin-uglify": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react-is": "^16.11.0"
   },
   "devEnvironments": {
     "servers": {

@@ -29,15 +29,11 @@ export function rollupMerge(source1 = {}, source2 = {}) {
 
 export default function(fileName) {
     return {
-        input: `src/${ isDEV ? 'dev' : 'index' }.js`,
-        // external: !isDEV && ['ms'],      // 打包时排除外部依赖包
+        input: isDEV ? 'test/app.js' : 'src/index.js',
+        external: !isDEV && ['react-is'],      // 打包时排除外部依赖包
         plugins: [
             del({
                 targets: `${BUILD_PATH}/${ fileName || '*' }`
-            }),
-            alias({
-                constants: 'src/constants',
-                utils: 'src/utils'
             }),
             babel({
                 exclude: 'node_modules/**' // only transpile our source code
